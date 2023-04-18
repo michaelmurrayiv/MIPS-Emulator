@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class registerFile {
     private static int[] registerFile = new int[32];
     private static int PC = 0;
+    public static int taken = 0;
 
     public static void printRegisters() {
         /*
@@ -79,7 +80,9 @@ public class registerFile {
         registerFile = new int[32];
     }
 
-    public static void setPC(int address) { PC = address; }
+    public static void setPC(int address) {
+        PC = address;
+    }
 
     public static void setValue(int index, int value){
         registerFile[index] = value;
@@ -88,6 +91,10 @@ public class registerFile {
     public static int getValue(int index){
         return registerFile[index];
     }
+
+
+
+
 
 
 }

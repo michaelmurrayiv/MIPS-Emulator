@@ -63,6 +63,8 @@ public class prompt {
         System.exit(0);
     }
 
-
+    public static void b() {
+        GHR.outputPredictorAccuracy();
+    }
 
 }

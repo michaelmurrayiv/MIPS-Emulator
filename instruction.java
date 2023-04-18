@@ -347,7 +347,9 @@ public class instruction {
 
         if(registerFile.getValue(intrs) == registerFile.getValue(intrt)){
             registerFile.setPC(registerFile.returnPC() + intimm);
+            registerFile.taken = 1;
         }
+        GHR.GHRExec();
 
     }
 
@@ -357,7 +359,9 @@ public class instruction {
         int intimm = (short)Integer.parseInt(imm, 2);
         if (registerFile.getValue(intrs) != registerFile.getValue(intrt)){
             registerFile.setPC(registerFile.returnPC() + intimm);
+            registerFile.taken = 1;
         }
+        GHR.GHRExec();
 
     }
 
@@ -382,7 +386,7 @@ public class instruction {
     }
 
     public void j(){
-        registerFile.setPC(Integer.parseInt(address));
+        registerFile.setPC(Integer.parseInt(address)-1);
     }
 
     public void jr(){
